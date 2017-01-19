@@ -7,7 +7,7 @@ ENV ANDROID_SDK_PATH /android
 ENV ANDROID_SDK_FILTER platform-tool,android-23,build-tools-24.0.2
 
 USER root
-RUN apt-get update && apt-get -f install -y && apt-get install -y --no-install-recommends \
+RUN add-apt-repository ppa:webupd8team/java && apt-get update && apt-get -f install -y && apt-get install -y --no-install-recommends \
     build-essential \
     fontconfig \
     libfreetype6-dev \
