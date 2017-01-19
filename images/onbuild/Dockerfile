@@ -1,7 +1,12 @@
 FROM abernix/spaceglue:builddeps
 MAINTAINER Jesse Rosenberger
-ARG MOBILESERVER
 
+ARG MOBILESERVER
+RUN if [ -z ${MOBILESERVER} ]; then \
+  echo "ERROR: Must set MOBILESERVER as a build argument!" && \
+  exit 1; \
+  fi
+  
 USER root
 WORKDIR /home/node
 ONBUILD WORKDIR /home/node
