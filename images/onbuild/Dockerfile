@@ -1,4 +1,4 @@
-FROM abernix/spaceglue:node-4.6.2-builddeps
+FROM mathiasvdpol/spaceglue:builddeps
 MAINTAINER Jesse Rosenberger
 
 ARG MOBILESERVER
