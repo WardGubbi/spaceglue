@@ -12,6 +12,7 @@ RUN apt-get update \
     software-properties-common \
     python-software-properties \
     && add-apt-repository ppa:openjdk-r/ppa \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
     build-essential \
     fontconfig \
