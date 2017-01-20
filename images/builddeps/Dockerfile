@@ -7,18 +7,20 @@ ENV ANDROID_SDK_PATH /android
 ENV ANDROID_SDK_FILTER platform-tool,android-23,build-tools-24.0.2
 
 USER root
+
+RUN add-apt-repository -y ppa:webupd8team/java
+RUN apt-get update -y
+
+RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+RUN apt-get install -y oracle-java8-installer
+
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    software-properties-common \
-    python-software-properties \
-    && add-apt-repository ppa:openjdk-r/ppa \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
     build-essential \
     fontconfig \
     libfreetype6-dev \
     libssl-dev \
-    openjdk-8-jdk \
     wget \
     curl \
     chrpath \
