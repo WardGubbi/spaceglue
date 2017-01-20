@@ -1,7 +1,7 @@
 FROM mathiasvdpol/spaceglue:builddeps
 MAINTAINER Jesse Rosenberger
 
-ARG MOBILESERVER
+ENV MOBILESERVER="http://localhost"
 RUN if [ -z ${MOBILESERVER} ]; then \
   echo "ERROR: Must set MOBILESERVER as a build argument!" && \
   exit 1; \
