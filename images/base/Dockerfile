@@ -25,7 +25,7 @@ ADD "${NODESOURCE_BASEURL}${NODESOURCE_BASEPATH}${NODESOURCE_DEB_PATH}" \
 RUN (dpkg -i /tmp/node.deb 2> /dev/null || true) && \
   rm /tmp/node.deb
 
-RUN apt-get update && apt-get -f install -y \
+RUN apt-get update && apt-get -f --force-yes install -y \
   && rm -rf /var/lib/apt/lists/*
 
 RUN ["npm", "install", "--global", "npm@3"]
