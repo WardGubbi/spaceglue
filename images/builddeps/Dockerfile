@@ -1,4 +1,4 @@
-FROM mathiasvdpol/spaceglue:node-4.6.2
+FROM mathiasvdpol/spaceglue:base
 MAINTAINER Jesse Rosenberger
 
 
