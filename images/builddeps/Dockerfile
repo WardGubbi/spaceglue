@@ -1,4 +1,4 @@
-FROM mathiasvdpol/spaceglue:base
+FROM beevelop/android-nodejs:v4
 MAINTAINER Jesse Rosenberger
 
 
