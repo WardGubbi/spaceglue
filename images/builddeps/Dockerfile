@@ -8,7 +8,7 @@ ENV ANDROID_SDK_FILTER platform-tool,android-23,build-tools-24.0.2
 
 USER root
 RUN apt-get update \
-    apt-get install -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends \
     software-properties-common \
     python-software-properties \
     && add-apt-repository ppa:webupd8team/java \
