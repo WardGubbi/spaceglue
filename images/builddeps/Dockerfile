@@ -8,15 +8,16 @@ ENV ANDROID_SDK_FILTER platform-tool,android-23,build-tools-24.0.2
 
 USER root
 
-RUN add-apt-repository -y ppa:webupd8team/java
-RUN apt-get update -y
-
-RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-RUN apt-get install -y oracle-java8-installer
-
-RUN apt-get update \
-    && apt-get update \
+RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
+    software-properties-common \ 
+    python-software-properties \
+    && apt-get update -y \
+    && add-apt-repository -y ppa:webupd8team/java \
+    && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections \
+    && apt-get update -y \
+    && apt-get install -y --no-install-recommends \
+    oracle-java8-installer \
     build-essential \
     fontconfig \
     libfreetype6-dev \
