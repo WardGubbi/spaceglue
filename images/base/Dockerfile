@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie-curl
+FROM codetroopers/jenkins-slave-jdk8-android:23-23.0.2
 MAINTAINER Jesse Rosenberger
 
 ADD apt-sources.list /etc/apt/sources.list
