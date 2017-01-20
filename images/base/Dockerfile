@@ -5,7 +5,7 @@ ADD apt-sources.list /etc/apt/sources.list
 
 # To set the NODE_VERSION, use a --build-arg to `docker build`.
 # (But really, use build_it.sh and set NODE_VERSION in your environment first)
-ARG NODE_VERSION
+ARG NODE_VERSION=4.6.2
 
 # Do not continue unless NODE_VERSION is set.
 RUN if [ -z ${NODE_VERSION} ]; then \
