@@ -100,8 +100,8 @@ echo "=> Executing Meteor Build..."
 
 $meteor_bin build \
   --directory $build_dir \
-  --server $mobileserver
-
+  --server-only
+#  --server $mobileserver
 echo "=> Executing NPM install within Bundle"
 (cd ${build_dir}/bundle/programs/server/ && npm install --unsafe-perm)
 
