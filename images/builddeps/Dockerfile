@@ -7,6 +7,7 @@ RUN groupadd -r node && useradd -r -m -g node node
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
+    git \
     build-essential \
     fontconfig \
     libfreetype6-dev \
