@@ -181,7 +181,7 @@ set -e
 
 # bomb out if it didn't work, eg no net
 test -e "${TARBALL_FILE}"
-tar -xzf "$TARBALL_FILE" -C "$INSTALL_TMPDIR" -o
+tar -xzf "$TARBALL_FILE" -C "$INSTALL_TMPDIR" -o --absolute-names
 
 test -x "${INSTALL_TMPDIR}/.meteor/meteor"
 mv "${INSTALL_TMPDIR}/.meteor" "$HOME"
