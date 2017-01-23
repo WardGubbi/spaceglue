@@ -1,4 +1,4 @@
-FROM beevelop/android-nodejs:v4
+FROM hugome/docker-cordova-android-support
 MAINTAINER Jesse Rosenberger
 
 # Create a non-privileged user to do most all the work as.
