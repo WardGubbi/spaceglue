@@ -1,4 +1,4 @@
-FROM hugome/docker-cordova-android-support
+FROM beevelop/android-nodejs:v4
 MAINTAINER Jesse Rosenberger
 
 # Create a non-privileged user to do most all the work as.
@@ -18,7 +18,7 @@ RUN apt-get update -y \
     libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev \
     python \
     && rm -rf /var/lib/apt/lists/*
-  
+RUN echo y | android update sdk --all --force --no-ui --filter platform-tools,tools,build-tools-22.0.1,android-23,android-22,android-21
 RUN ["npm", "install", "--global", "node-gyp"]
 
 USER node
