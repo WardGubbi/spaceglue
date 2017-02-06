@@ -2,6 +2,7 @@
 
 set -e # Exit on any bad exit status
 my_dir=`dirname $0`
+mobileserver=$1
 
 # Shouldn't matter, but just in case.
 export METEOR_NO_RELEASE_CHECK=1
@@ -99,7 +100,9 @@ $meteor_bin npm install --production 2>&1 > /dev/null
 echo "=> Executing Meteor Build..."
 
 $meteor_bin build \
-  --directory $build_dir
+  --directory $build_dir \
+  --server-only 
+  
 
 echo "=> Executing NPM install within Bundle"
 (cd ${build_dir}/bundle/programs/server/ && npm install --unsafe-perm)
