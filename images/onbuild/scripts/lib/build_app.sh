@@ -43,20 +43,6 @@ if ! [ -f ".meteor/release" ]; then
   exit 1
 fi
 
-# First, try to get the Meteor version from the .meteor/release file in the app.
-if [ -z "$METEOR_RELEASE" ]; then
-  METEOR_RELEASE="$(grep "^METEOR@" .meteor/release | sed 's/^METEOR@//;')"
-fi
-
-# Check to make sure it's not a generally unpublished version, like beta or RC.
-# These aren't generally available as direct bootstrap downloads.
-if ! [ -z "$METEOR_RELEASE" ]; then
-  if (echo "$METEOR_RELEASE" | grep -Eq '\-(alpha|beta|rc)'); then
-    echo "=> [warn] Beta and RC releases cannot use the streamlined downloading..."
-    unset METEOR_RELEASE
-  fi
-fi
-
 # Useful for various hot-patches/optimizations
 meteor_bin="$HOME/.meteor/meteor"
 meteor_bin_symlink="$(readlink $meteor_bin)"
