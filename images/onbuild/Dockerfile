@@ -6,9 +6,9 @@ WORKDIR /home/node
 ONBUILD WORKDIR /home/node
 COPY scripts .
 RUN chown -R node:node /home/node/
+RUN ["npm", "install", "--global", "node-gyp"]
 RUN lib/install_meteor.sh
 
-RUN ["npm", "install", "--global", "node-gyp"]
 USER node
 
 ONBUILD USER root
