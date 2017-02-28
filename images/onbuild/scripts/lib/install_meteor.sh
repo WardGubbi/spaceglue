@@ -4,9 +4,7 @@ set -e # Exit on any bad exit status
 
 # First, try to get the Meteor version from the .meteor/release file in the app.
 if [ -z "$METEOR_RELEASE" ]; then
-  METEOR_RELEASE="$(grep "^METEOR@" .meteor/release | sed 's/^METEOR@//;')"
-  echo "${METEOR_RELEASE}"
-
+  METEOR_RELEASE="1.4.2.3"
 fi
 
 
