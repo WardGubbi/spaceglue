@@ -1,3 +1,7 @@
+#!/bin/sh
+
+set -e # Exit on any bad exit status
+
 # First, try to get the Meteor version from the .meteor/release file in the app.
 if [ -z "$METEOR_RELEASE" ]; then
   METEOR_RELEASE="$(grep "^METEOR@" .meteor/release | sed 's/^METEOR@//;')"
@@ -23,3 +27,5 @@ if true; then
   echo "=> Running the ${METEOR_RELEASE} installer..."
   cat /tmp/install_meteor.sh | sed s/--progress-bar/-sL/g | /bin/sh
 fi
+
+set +e
