@@ -5,7 +5,10 @@ set -e # Exit on any bad exit status
 # First, try to get the Meteor version from the .meteor/release file in the app.
 if [ -z "$METEOR_RELEASE" ]; then
   METEOR_RELEASE="$(grep "^METEOR@" .meteor/release | sed 's/^METEOR@//;')"
+  echo "${METEOR_RELEASE}"
+
 fi
+
 
 # Would like to use a cached Meteor here at some point, but for now,
 # download the installer, attempting to use the preferred version, from
