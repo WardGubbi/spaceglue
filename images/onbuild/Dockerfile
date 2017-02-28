@@ -9,6 +9,7 @@ RUN chown -R node:node /home/node/
 
 RUN ["npm", "install", "--global", "node-gyp"]
 USER node
+RUN lib/install_meteor.sh
 
 ONBUILD USER root
 ONBUILD COPY ./ /home/node/app
